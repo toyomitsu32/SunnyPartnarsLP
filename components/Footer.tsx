@@ -11,11 +11,9 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/sunny-logo.png" 
-                alt="Sunny Partners Logo" 
-                className="h-12 w-auto"
-              />
+              <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
+                <span className="text-white text-2xl">☀️</span>
+              </div>
               <div>
                 <h3 className="text-xl font-bold">Sunny Partners</h3>
                 <p className="text-sm text-white/70">サニーパートナーズ</p>
