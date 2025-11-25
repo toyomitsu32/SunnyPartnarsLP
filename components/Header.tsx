@@ -35,21 +35,21 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-white/80 backdrop-blur-sm py-6'
       }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-orange to-primary-yellow flex items-center justify-center shadow-md">
               <span className="text-white text-2xl">☀️</span>
             </div>
             <div>
-              <h1 className={`text-xl font-bold ${isScrolled ? 'text-primary-navy' : 'text-white'}`}>
+              <h1 className="text-xl font-bold text-primary-navy">
                 Sunny Partners
               </h1>
-              <p className={`text-xs ${isScrolled ? 'text-gray-600' : 'text-white/90'}`}>
+              <p className="text-xs text-gray-600">
                 サニーパートナーズ
               </p>
             </div>
@@ -61,9 +61,7 @@ const Header = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className={`font-medium transition-colors duration-300 hover:text-primary-orange ${
-                  isScrolled ? 'text-primary-navy' : 'text-white'
-                }`}
+                className="font-medium transition-colors duration-300 text-primary-navy hover:text-primary-orange"
               >
                 {item.name}
               </button>
@@ -72,14 +70,10 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-2xl"
+            className="md:hidden text-2xl text-primary-navy"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? (
-              <FiX className={isScrolled ? 'text-primary-navy' : 'text-white'} />
-            ) : (
-              <FiMenu className={isScrolled ? 'text-primary-navy' : 'text-white'} />
-            )}
+            {isMobileMenuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
 
