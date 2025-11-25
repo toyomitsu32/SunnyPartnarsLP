@@ -10,14 +10,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 rounded-full gradient-bg flex items-center justify-center">
-                <span className="text-white text-2xl">☀️</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Sunny Partners</h3>
-                <p className="text-sm text-white/70">サニーパートナーズ</p>
-              </div>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/sunny-logo-horizontal.png" 
+                alt="Sunny Partners" 
+                className="h-14 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-white/70 leading-relaxed text-sm mb-4">
               挑戦する事業者の「次のステージ」を、共に創る。

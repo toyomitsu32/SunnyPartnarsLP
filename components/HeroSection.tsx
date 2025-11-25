@@ -45,18 +45,20 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Sun Icon - 太陽のアイコン（控えめ） */}
+          {/* Sun Logo - Sunny Partners ロゴアイコン */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="mb-8 inline-block"
           >
-            <div className="relative w-24 h-24 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-orange to-primary-yellow rounded-full opacity-20 blur-xl animate-pulse"></div>
-              <div className="relative w-24 h-24 bg-gradient-to-br from-primary-orange to-primary-yellow rounded-full flex items-center justify-center shadow-2xl">
-                <span className="text-5xl">☀️</span>
-              </div>
+            <div className="relative w-32 h-32 mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-orange to-primary-yellow rounded-full opacity-20 blur-2xl animate-pulse"></div>
+              <img 
+                src="/sunny-logo-icon.png" 
+                alt="Sunny Partners Logo" 
+                className="relative w-32 h-32 drop-shadow-2xl"
+              />
             </div>
           </motion.div>
 

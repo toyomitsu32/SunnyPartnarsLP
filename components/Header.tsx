@@ -41,18 +41,12 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-orange to-primary-yellow flex items-center justify-center shadow-md">
-              <span className="text-white text-2xl">☀️</span>
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-primary-navy">
-                Sunny Partners
-              </h1>
-              <p className="text-xs text-gray-600">
-                サニーパートナーズ
-              </p>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src="/sunny-logo-horizontal.png" 
+              alt="Sunny Partners" 
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
