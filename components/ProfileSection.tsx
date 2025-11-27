@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { FiAward, FiBriefcase, FiHeart } from 'react-icons/fi';
+import Image from 'next/image';
 
 const ProfileSection = () => {
   return (
@@ -28,14 +29,20 @@ const ProfileSection = () => {
               className="md:col-span-1"
             >
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-primary-orange to-primary-yellow rounded-lg overflow-hidden shadow-xl">
-                  {/* Placeholder for profile image */}
-                  <div className="w-full h-full flex items-center justify-center text-white text-8xl">
-                    👤
-                  </div>
+                <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl overflow-hidden shadow-xl relative">
+                  {/* Placeholder for profile image - Replace with actual image */}
+                  <Image
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=800&fit=crop"
+                    alt="代表プロフィール写真"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                    priority
+                  />
+                  {/* Replace above src with: /images/profile.jpg */}
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 gradient-bg rounded-full flex items-center justify-center text-white text-4xl shadow-lg">
-                  ☀️
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary-orange to-primary-yellow rounded-full flex items-center justify-center shadow-xl border-4 border-white">
+                  <FiAward className="text-3xl text-white" />
                 </div>
               </div>
             </motion.div>
@@ -85,23 +92,46 @@ const ProfileSection = () => {
                     <FiAward className="text-2xl" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary-navy mb-2">資格・スキル</h4>
+                    <h4 className="font-bold text-primary-navy mb-3">保有資格</h4>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-secondary-darkgray mb-4">
+                      <li className="flex items-center">
+                        <span className="text-primary-orange mr-2 font-bold">✓</span>
+                        データベーススペシャリスト
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-primary-orange mr-2 font-bold">✓</span>
+                        ネットワークスペシャリスト
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-primary-orange mr-2 font-bold">✓</span>
+                        Google Cloud Associate
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-primary-orange mr-2 font-bold">✓</span>
+                        日商簿記2級
+                      </li>
+                    </ul>
+                    <h4 className="font-bold text-primary-navy mb-3 mt-4">主なスキル・経験</h4>
                     <ul className="space-y-2 text-secondary-darkgray">
                       <li className="flex items-center">
-                        <span className="text-primary-orange mr-2">✓</span>
-                        プロジェクトマネジメント経験(製造業・IT業界)
+                        <span className="text-primary-orange mr-2">•</span>
+                        プロジェクトマネジメント（製造業・IT業界で15年以上）
                       </li>
                       <li className="flex items-center">
-                        <span className="text-primary-orange mr-2">✓</span>
-                        AI活用(ChatGPT、Gemini等)
+                        <span className="text-primary-orange mr-2">•</span>
+                        クラウドインフラ設計・構築（Google Cloud Platform）
                       </li>
                       <li className="flex items-center">
-                        <span className="text-primary-orange mr-2">✓</span>
-                        Web制作、デザインツール活用
+                        <span className="text-primary-orange mr-2">•</span>
+                        データベース設計・最適化、ネットワーク構築
                       </li>
                       <li className="flex items-center">
-                        <span className="text-primary-orange mr-2">✓</span>
-                        スプレッドシート、データ分析
+                        <span className="text-primary-orange mr-2">•</span>
+                        AI活用支援（ChatGPT、Gemini等の業務導入）
+                      </li>
+                      <li className="flex items-center">
+                        <span className="text-primary-orange mr-2">•</span>
+                        Web制作・デザインツール、データ分析・可視化
                       </li>
                     </ul>
                   </div>
