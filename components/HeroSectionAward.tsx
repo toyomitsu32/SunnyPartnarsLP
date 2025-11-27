@@ -96,15 +96,15 @@ const HeroSectionAward = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="max-w-3xl"
+              className="max-w-4xl"
             >
               {/* Main Heading */}
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-primary-navy mb-6 leading-[1.2] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-primary-navy mb-6 leading-[1.3] tracking-tight">
                 挑戦する事業者の
-                <span className="block mt-2 text-shimmer">
+                <span className="inline-block ml-2 text-shimmer">
                   「次のステージ」
                 </span>
-                <span className="block mt-2">
+                <span className="inline-block ml-2">
                   を、共に創る
                 </span>
               </h1>
