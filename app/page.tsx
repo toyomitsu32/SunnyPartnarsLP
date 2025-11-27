@@ -1,5 +1,5 @@
 import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
+import HeroSectionAward from '@/components/HeroSectionAward';
 import ProblemsSection from '@/components/ProblemsSection';
 import SolutionSection from '@/components/SolutionSection';
 import ServicesSection from '@/components/ServicesSection';
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Header />
-      <HeroSection />
+      <HeroSectionAward />
       <ProblemsSection />
       <SolutionSection />
       <ServicesSection />
