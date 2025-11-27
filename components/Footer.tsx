@@ -25,7 +25,7 @@ const Footer = () => {
               作って終わらず、伴走し続けるパートナー。
             </p>
             <div className="space-y-2 text-sm">
-              <p className="text-white/70">代表:豊田 [お名前]</p>
+              <p className="text-white/70">代表:豊田 光晴</p>
               <p className="text-white/70">
                 営業時間:平日 9:00〜18:00
                 <br />

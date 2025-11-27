@@ -101,7 +101,7 @@ const StorySection = () => {
 
             <div className="text-right mt-8 pt-8 border-t border-white/30">
               <p className="text-xl font-bold">Sunny Partners 代表</p>
-              <p className="text-2xl font-bold mt-2">豊田 [お名前]</p>
+              <p className="text-2xl font-bold mt-2">豊田 光晴</p>
             </div>
           </div>
         </motion.div>
