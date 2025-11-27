@@ -1,13 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiGlobe, FiTrendingUp, FiMessageCircle, FiBarChart2, FiCpu, FiHeart } from 'react-icons/fi';
+import { FiGlobe, FiTrendingUp, FiMessageCircle, FiBarChart2, FiCpu, FiHeart, FiMegaphone, FiMessageSquare, FiPieChart, FiZap, FiUsers } from 'react-icons/fi';
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: <FiGlobe className="text-5xl" />,
-      emoji: '🌐',
+      icon: FiGlobe,
       title: 'Web制作',
       description:
         'ランディングページ(LP)・ホームページを制作します。デザインだけでなく、「誰に」「何を」「どう伝えるか」を設計し、成果につながるWebサイトを作ります。',
@@ -16,10 +15,10 @@ const ServicesSection = () => {
         '既存サイトのリニューアルを検討中の方',
         '「見た目」だけでなく「成果」を重視したい方',
       ],
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: <FiTrendingUp className="text-5xl" />,
-      emoji: '📢',
+      icon: FiMegaphone,
       title: '販促ツール制作',
       description:
         'チラシ・パンフレット・動画など、集客のためのツールを制作します。ターゲットに響くデザインとメッセージで、確実に成果を生み出します。',
@@ -28,10 +27,10 @@ const ServicesSection = () => {
         '店舗やサービスの認知を広げたい方',
         '動画で商品・サービスを分かりやすく伝えたい方',
       ],
+      gradient: 'from-orange-500 to-red-500',
     },
     {
-      icon: <FiMessageCircle className="text-5xl" />,
-      emoji: '💬',
+      icon: FiMessageSquare,
       title: '公式LINE構築',
       description:
         'お客様との関係づくりに欠かせない、公式LINEを構築します。自動応答・リッチメニュー・ステップ配信など、運用しやすい設計でサポートします。',
@@ -40,10 +39,10 @@ const ServicesSection = () => {
         '予約や問い合わせをLINEで受け付けたい方',
         '定期的な情報発信で、リピーターを増やしたい方',
       ],
+      gradient: 'from-green-500 to-emerald-500',
     },
     {
-      icon: <FiBarChart2 className="text-5xl" />,
-      emoji: '📊',
+      icon: FiPieChart,
       title: '数字の見える化',
       description:
         '売上・集客・KPIなど、事業の数字をスプレッドシートで管理できるよう支援します。「何の数字を、どう見ればいいか」を分かりやすく設計します。',
@@ -52,10 +51,10 @@ const ServicesSection = () => {
         'Excel・スプレッドシートを活用したい方',
         'データをもとに、改善策を考えたい方',
       ],
+      gradient: 'from-purple-500 to-pink-500',
     },
     {
-      icon: <FiCpu className="text-5xl" />,
-      emoji: '🤖',
+      icon: FiZap,
       title: 'AI活用支援・教育',
       description:
         'ChatGPT・Gemini等のAIツールを、業務に活用する方法を支援します。社内向けの教育・研修から、継続的なフォローアップまで対応します。',
@@ -64,10 +63,10 @@ const ServicesSection = () => {
         'スタッフにAIを使ってほしいが、教え方が分からない方',
         '業務効率化のために、AIを本格導入したい方',
       ],
+      gradient: 'from-yellow-500 to-orange-500',
     },
     {
-      icon: <FiHeart className="text-5xl" />,
-      emoji: '🤝',
+      icon: FiUsers,
       title: '運用伴走サポート',
       description:
         '「作って終わり」ではありません。納品後も定期的にサポートし、改善提案や運用支援を継続します。',
@@ -76,6 +75,7 @@ const ServicesSection = () => {
         '定期的に改善提案を受けたい方',
         '「相談できるパートナー」が欲しい方',
       ],
+      gradient: 'from-indigo-500 to-blue-500',
     },
   ];
 
@@ -104,10 +104,12 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="flex items-center mb-6">
-                <div className="text-5xl mr-4">{service.emoji}</div>
+                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <service.icon className="text-3xl text-white" />
+                </div>
                 <h3 className="text-2xl font-bold text-primary-navy">
                   {service.title}
                 </h3>
