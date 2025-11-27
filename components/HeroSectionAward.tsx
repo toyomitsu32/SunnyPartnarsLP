@@ -86,7 +86,7 @@ const HeroSectionAward = () => {
       </div>
 
       <motion.div 
-        className="container-custom relative z-10 pt-32 pb-20"
+        className="container-custom relative z-10 pt-32 pb-32"
         style={{ opacity }}
       >
         <div className="max-w-6xl mx-auto">
@@ -258,7 +258,7 @@ const HeroSectionAward = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50 hidden lg:block"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -266,7 +266,7 @@ const HeroSectionAward = () => {
             className="flex flex-col items-center"
           >
             <span className="text-xs text-gray-500 mb-2 font-semibold tracking-widest">SCROLL</span>
-            <div className="w-6 h-10 border-2 border-primary-orange rounded-full flex justify-center pt-2">
+            <div className="w-6 h-10 border-2 border-primary-orange rounded-full flex justify-center pt-2 bg-white/80 backdrop-blur-sm">
               <motion.div 
                 className="w-1.5 h-2 bg-primary-orange rounded-full"
                 animate={{ y: [0, 12, 0] }}
