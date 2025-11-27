@@ -1,8 +1,9 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FiGift, FiMail, FiArrowRight } from 'react-icons/fi';
+import { FiGift, FiMail, FiArrowRight, FiTrendingUp, FiTarget, FiAward } from 'react-icons/fi';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 const HeroSectionAward = () => {
   const ref = useRef(null);
@@ -99,35 +100,15 @@ const HeroSectionAward = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              {/* Award Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                className="inline-block mb-6"
-              >
-                <div className="glass-card px-6 py-3 inline-flex items-center space-x-2">
-                  <motion.span 
-                    className="text-2xl"
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    🏆
-                  </motion.span>
-                  <span className="text-sm font-bold text-primary-orange">
-                    Award-Winning Design
-                  </span>
-                </div>
-              </motion.div>
-
               {/* Main Heading */}
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-primary-navy mb-6 leading-[1.1] tracking-tight">
-                挑戦する<br/>
-                事業者の
-                <span className="block mt-2 text-shimmer">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-primary-navy mb-6 leading-[1.15] tracking-tight">
+                挑戦する事業者の
+                <span className="block mt-3 text-shimmer">
                   「次のステージ」
                 </span>
-                を、共に創る
+                <span className="block mt-3">
+                  を、共に創る
+                </span>
               </h1>
 
               {/* Sub Heading */}
@@ -188,28 +169,54 @@ const HeroSectionAward = () => {
             >
               {/* 3D Card Stack */}
               <div className="relative h-[600px]">
-                {[3, 2, 1].map((i) => (
+                {[
+                  {
+                    id: 3,
+                    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+                    alt: 'データ分析ダッシュボード'
+                  },
+                  {
+                    id: 2,
+                    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+                    alt: 'グラフとデータビジュアライゼーション'
+                  },
+                  {
+                    id: 1,
+                    image: null,
+                    alt: 'メインカード'
+                  }
+                ].map((card) => (
                   <motion.div
-                    key={i}
-                    className="absolute inset-0 glass-card p-8"
+                    key={card.id}
+                    className="absolute inset-0 glass-card overflow-hidden"
                     style={{
-                      transform: `translateY(${(3 - i) * 20}px) translateX(${(3 - i) * 20}px)`,
-                      zIndex: i
+                      transform: `translateY(${(3 - card.id) * 20}px) translateX(${(3 - card.id) * 20}px)`,
+                      zIndex: card.id
                     }}
                     animate={{
-                      y: [(3 - i) * 20, (3 - i) * 20 + 10, (3 - i) * 20],
+                      y: [(3 - card.id) * 20, (3 - card.id) * 20 + 10, (3 - card.id) * 20],
                     }}
                     transition={{
                       duration: 3,
                       repeat: Infinity,
-                      delay: i * 0.3
+                      delay: card.id * 0.3
                     }}
                   >
-                    {i === 1 && (
-                      <div className="h-full flex flex-col justify-between">
+                    {card.image ? (
+                      <div className="relative h-full w-full">
+                        <Image
+                          src={card.image}
+                          alt={card.alt}
+                          fill
+                          className="object-cover opacity-60"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary-orange/10 to-primary-yellow/10"></div>
+                      </div>
+                    ) : (
+                      <div className="h-full flex flex-col justify-between p-8">
                         <div>
-                          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-orange to-primary-yellow flex items-center justify-center mb-6 shadow-xl">
-                            <span className="text-4xl">☀️</span>
+                          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-orange to-primary-yellow flex items-center justify-center mb-6 shadow-xl">
+                            <FiTrendingUp className="text-4xl text-white" />
                           </div>
                           <h3 className="text-2xl font-bold text-primary-navy mb-4">
                             全体を見渡した設計
@@ -222,15 +229,18 @@ const HeroSectionAward = () => {
                         {/* Stats */}
                         <div className="grid grid-cols-3 gap-4 mt-8">
                           {[
-                            { label: '実績', value: '100+' },
-                            { label: '満足度', value: '99%' },
-                            { label: '継続率', value: '95%' }
+                            { label: '実績', value: '100+', icon: FiAward },
+                            { label: '満足度', value: '99%', icon: FiTarget },
+                            { label: '継続率', value: '95%', icon: FiTrendingUp }
                           ].map((stat) => (
                             <div key={stat.label} className="text-center">
                               <div className="text-3xl font-black bg-gradient-to-r from-primary-orange to-primary-yellow bg-clip-text text-transparent">
                                 {stat.value}
                               </div>
-                              <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
+                              <div className="text-xs text-gray-500 mt-1 flex items-center justify-center gap-1">
+                                <stat.icon className="w-3 h-3" />
+                                {stat.label}
+                              </div>
                             </div>
                           ))}
                         </div>
