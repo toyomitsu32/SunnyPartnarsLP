@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FiGlobe, FiTrendingUp, FiMessageCircle, FiBarChart2, FiCpu, FiHeart, FiMegaphone, FiMessageSquare, FiPieChart, FiZap, FiUsers } from 'react-icons/fi';
+import { FiGlobe, FiTrendingUp, FiMessageCircle, FiBarChart2, FiCpu, FiHeart, FiVolume2, FiMessageSquare, FiPieChart, FiZap, FiUsers } from 'react-icons/fi';
 
 const ServicesSection = () => {
   const services = [
@@ -18,7 +18,7 @@ const ServicesSection = () => {
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: FiMegaphone,
+      icon: FiVolume2,
       title: '販促ツール制作',
       description:
         'チラシ・パンフレット・動画など、集客のためのツールを制作します。ターゲットに響くデザインとメッセージで、確実に成果を生み出します。',
