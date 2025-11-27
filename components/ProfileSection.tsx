@@ -57,10 +57,10 @@ const ProfileSection = () => {
             >
               <div>
                 <h3 className="text-3xl font-bold text-primary-navy mb-2">
-                  代表 豊田 [お名前]
+                  代表 豊田 光晴
                 </h3>
                 <p className="text-xl text-gray-600 font-montserrat">
-                  Toyoda [Name]
+                  Toyoda Mitsuharu
                 </p>
               </div>
 
