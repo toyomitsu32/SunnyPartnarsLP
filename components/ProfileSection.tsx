@@ -73,7 +73,7 @@ const ProfileSection = () => {
                   <div>
                     <h4 className="font-bold text-primary-navy mb-2">経歴</h4>
                     <p className="text-secondary-darkgray leading-relaxed">
-                      東京理科大学 理工学部 経営工学科を卒業後、大手IT企業に入社。
+                      東京理科大学 理工学部 経営工学科を卒業後、大手製造メーカーに入社。
                       半導体製造装置の市場サポート部門で、VBAとデータベーススキルを掛け合わせた業務改善により、入社2年目で事業部長賞を受賞。
                       <br /><br />
                       その後、技術支援・プロジェクトマネジメントに従事。
