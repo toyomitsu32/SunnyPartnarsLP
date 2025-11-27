@@ -20,10 +20,7 @@ const HeroSectionAward = () => {
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="h-full w-full" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 107, 53, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 107, 53, 0.3) 1px, transparent 1px)
-          `,
+          backgroundImage: 'linear-gradient(rgba(255, 107, 53, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 107, 53, 0.3) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
           animation: 'gridMove 20s linear infinite'
         }}></div>
@@ -208,7 +205,9 @@ const HeroSectionAward = () => {
                           src={card.image}
                           alt={card.alt}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover opacity-60"
+                          priority={card.id === 1}
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-primary-orange/10 to-primary-yellow/10"></div>
                       </div>
